@@ -45,7 +45,8 @@
   cursor: default;
 }
 
-.button:active {
-  background-color: #298e46;
+.button.active {
+  color: black;
+  background-color: #FFE300;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }

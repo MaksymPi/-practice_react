@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
 import './Button.css'
 
-const Button = ({children}) => {
+const Button = ({children, onClick, isActive}) => {
 
-  const [content, setContent] = useState('fsdfsdf');
-  console.log(content);
-  console.log(setContent);
-
-  function handleClick() {
-    setContent({children})
-    console.log({children});
-  }
   return (
-    <button className='button' onClick={handleClick}>{children}</button>
+    <button className={isActive ? 'button active':'button'} onClick={onClick}>
+      {children}
+    </button>
   )
 }
 
