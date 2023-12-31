@@ -1,0 +1,19 @@
+.header {
+  height: 50px;
+  display: flex;
+  padding: 0 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background: #5e550e;
+  margin-bottom: 50px;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    font-size: 36px;
+  }
+
+.time {
+    color: #000000;
+  }
