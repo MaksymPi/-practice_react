@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: #FFE300;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 h1 {
