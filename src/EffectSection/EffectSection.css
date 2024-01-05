@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    border: 2px solid #FFE300;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Стили для элементов списка */
+li {
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #FFE300;
+    transition: all 0.3s ease;
+  }
+  
+  /* Стили для последнего элемента списка (убираем бордер снизу) */
+li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Стили при наведении на элемент списка */
+li:hover {
+    color: #2c974b;
+    cursor: pointer;
+  }
+  

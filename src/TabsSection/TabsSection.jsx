@@ -8,10 +8,19 @@ const TabsSection = ({ active, onChange }) => {
         <section className='TabsSection'>
             <Button
                 isActive={active === 'Home'}
-                onClick={() => onChange('Home')}>Home</Button>
+                onClick={() => onChange('Home')}>
+                    Home
+            </Button>
             <Button
                 isActive={active === 'Feedback'}
-                onClick={() => onChange('Feedback')}>Feedback</Button>
+                onClick={() => onChange('Feedback')}>
+                    Feedback
+            </Button>
+            <Button
+                isActive={active === 'Effect'}
+                onClick={() => onChange('Effect')}>
+                    Effect
+            </Button>
         </section>
     )
 }

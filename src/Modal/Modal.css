@@ -1,0 +1,15 @@
+dialog {
+    width: 400px;
+    margin: 10rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 100;
+    background-color: rgb(19, 19, 19);
+    color: #FFE300;
+}
+dialog::backdrop {
+    position: fixed;
+    inset: 0px;
+    background: black;
+}
