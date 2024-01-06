@@ -1,10 +1,10 @@
 
-import Header from "./Header/Header"
-import SectionAttributes from "./SectionAttributes/SectionAttributes";
-import TabsSection from "./TabsSection/TabsSection";
-import FeedbackSection from './FeedbackSection/FeedbackSection'
+import Header from "./components/Header/Header"
+import SectionAttributes from "./components/SectionAttributes/SectionAttributes";
+import TabsSection from "./components/TabsSection/TabsSection";
+import FeedbackSection from './components/FeedbackSection/FeedbackSection'
 import { useState } from "react";
-import EffectSection from "./EffectSection/EffectSection";
+import EffectSection from "./components/EffectSection/EffectSection";
 
 function App() {
   const [tab, setTab] = useState('Effect')

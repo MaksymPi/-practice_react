@@ -8,25 +8,22 @@ ul {
     align-items: flex-start;
     text-align: center;
     width: 500px;
-    border: 1px solid #2c974b;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(6, 144, 75, 0.3);
   }
   
   /* Стили для элементов списка */
 li {
     padding: 15px;
+    margin-bottom: 15px;
     width: 100%;
     color: #fff;
     font-weight: 600;
-    border-bottom: 1px solid #2c974b;
+    border: 1px solid #2c974b;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(6, 144, 75, 0.3);
     transition: all 0.3s ease;
   }
   
-  /* Стили для последнего элемента списка (убираем бордер снизу) */
-li:last-child {
-    border-bottom: none;
-  }
   
   /* Стили при наведении на элемент списка */
 li:hover {
