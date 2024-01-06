@@ -1,21 +1,25 @@
 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 300px;
-    border: 2px solid #FFE300;
+    text-align: center;
+    width: 500px;
+    border: 1px solid #2c974b;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 5px rgba(6, 144, 75, 0.3);
   }
   
   /* Стили для элементов списка */
 li {
     padding: 15px;
     width: 100%;
-    border-bottom: 1px solid #FFE300;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid #2c974b;
     transition: all 0.3s ease;
   }
   
@@ -26,7 +30,7 @@ li:last-child {
   
   /* Стили при наведении на элемент списка */
 li:hover {
-    color: #2c974b;
+    color: #FFE300;
     cursor: pointer;
   }
   
