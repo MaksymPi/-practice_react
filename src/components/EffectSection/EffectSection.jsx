@@ -31,11 +31,15 @@ const EffectSection = () => {
   return (
     <section>
       <h3>Effects</h3>
-      <Button style={{ marginBottom: '1rem' }} onClick={() => { setModal(true) }}>Open info</Button>
       <Modal open={modal}>
-        <h3>Hello from modal</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia consectetur debitis quisquam aut illo vero, iste magni esse perferendis. Iusto blanditiis eos itaque mollitia atque ex quis dicta eaque?
-        </p>
+        <h3>
+          {peoples.map(people => (
+            <span key={people.name}>{people.name}</span>
+          ))}
+        </h3>
+        <ul>
+          <li></li>
+        </ul>
         <Button onClick={() => { setModal(false) }}>Close</Button>
       </Modal>
 
@@ -43,18 +47,18 @@ const EffectSection = () => {
 
       {!loading && (
         <>
-        <input type="text" className='control' {...input}/>
-        <ul>
-        {peoples
-          .filter(people => people.name.toLowerCase().includes(input.value.toLowerCase()))
-          .map(people => (
-          <li key={people.name}>{people.name}</li>
-           ))}
+          <input type="text" className='control' {...input} />
+          <ul>
+            {peoples
+              .filter(people => people.name.toLowerCase().includes(input.value.toLowerCase()))
+              .map(people => (
+                <li onClick={() => { setModal(true) }} key={people.name}>{people.name}</li>
+              ))}
 
-        </ul>
+          </ul>
         </>
-        )}
-     
+      )}
+
 
 
 
