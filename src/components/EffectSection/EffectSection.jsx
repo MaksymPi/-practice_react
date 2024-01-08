@@ -1,18 +1,23 @@
 import React from 'react'
 import { useEffect, useState, useCallback } from 'react'
 
+import uniqid from 'uniqid';
+
 
 import Button from '../Button/Button'
 import Modal from '../Modal/Modal'
 import useInput from '../../hooks/useInput'
+import CharacterProperties from '../CharacterProperties/CharacterProperties';
 
 import './EffectSection.css'
+
 
 const EffectSection = () => {
   const input = useInput()
   const [modal, setModal] = useState(false)
   const [loading, setLoading] = useState(false)
   const [peoples, setPeoples] = useState([])
+  const [selectedCharacter, setSelectedCharacter] = useState(null)
 
   const fetchPeoples = useCallback(async () => {
     setLoading(true)
@@ -31,15 +36,11 @@ const EffectSection = () => {
   return (
     <section>
       <h3>Effects</h3>
-      <Modal open={modal}>
+      <Modal open={modal} character={selectedCharacter} onClose={() => setModal(false)}>
         <h3>
-          {peoples.map(people => (
-            <span key={people.name}>{people.name}</span>
-          ))}
+          {selectedCharacter?.name}
         </h3>
-        <ul>
-          <li></li>
-        </ul>
+        <CharacterProperties selectedCharacter={selectedCharacter} />
         <Button onClick={() => { setModal(false) }}>Close</Button>
       </Modal>
 
@@ -52,9 +53,10 @@ const EffectSection = () => {
             {peoples
               .filter(people => people.name.toLowerCase().includes(input.value.toLowerCase()))
               .map(people => (
-                <li onClick={() => { setModal(true) }} key={people.name}>{people.name}</li>
+                <li onClick={() => { setSelectedCharacter(people); setModal(true) }} key={uniqid()}>
+                  {people.name}
+                </li>
               ))}
-
           </ul>
         </>
       )}
