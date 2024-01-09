@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react'
 import {createPortal} from 'react-dom'
 import './Modal.css'
 
-const Modal = ({children, open, character}) => {
+const Modal = ({children, open}) => {
     const dialog = useRef()
 
     useEffect(()=>{

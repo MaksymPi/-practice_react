@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import Button from '../Button/Button'
 import './SectionAttributes.css'
 
@@ -8,10 +8,27 @@ import './SectionAttributes.css'
 const SectionAttributes = () => {
     const [contentType, setContentType] = useState(null)
 
-    function handleClick(type) {
-      setContentType(type)
-    }
+    const [api, setApi] = useState({ films: [], people: [], /* другие категории */ });
 
+    const fetchPeoples = useCallback(async () => {
+        const response = await fetch('https://swapi.dev/api/');
+        const apiData = await response.json();
+        setApi(apiData);
+    }, [])
+
+
+
+    useEffect(() => {
+        fetchPeoples()
+    }, [fetchPeoples])
+
+
+    function handleClick(type) {
+        setTimeout(() => {
+            setContentType(type);
+        }, 2000)
+    }
+console.log(Object.entries(api.films));
     return (
         <section className="section-attributes">
             <Button
@@ -19,6 +36,17 @@ const SectionAttributes = () => {
                 isActive={contentType === 'films'}
                 onClick={() => handleClick('films')}>
                 Films
+                {contentType === 'films' && (
+                    <div>
+                        <h1>Films</h1>
+                        <ul>
+                            {Object.entries(api.films).map((key, value) => (
+                                <li key={key}>{value}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
             </Button>
             <Button
                 className='button'
