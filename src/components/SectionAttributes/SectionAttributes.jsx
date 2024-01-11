@@ -6,76 +6,87 @@ import './SectionAttributes.css'
 
 
 const SectionAttributes = () => {
-    const [contentType, setContentType] = useState(null)
+    const [contentType, setContentType] = useState(null);
 
-    const [api, setApi] = useState({ films: [], people: [], /* другие категории */ });
+    const [api, setApi] = useState({ films: { results: [] }, people: { results: [] },});
 
-    const fetchPeoples = useCallback(async () => {
+    const fetchPeople = useCallback(async () => {
         const response = await fetch('https://swapi.dev/api/');
         const apiData = await response.json();
-        setApi(apiData);
-    }, [])
-
-
+        console.log(apiData);
+        setApi({ ...api, isActive: { results: apiData.results } });
+    }, []);
 
     useEffect(() => {
-        fetchPeoples()
-    }, [fetchPeoples])
-
+        fetchPeople();
+    }, [fetchPeople]);
 
     function handleClick(type) {
-        setTimeout(() => {
-            setContentType(type);
-        }, 2000)
+        setContentType(type);
     }
-console.log(Object.entries(api.films));
+
     return (
         <section className="section-attributes">
             <Button
                 className='button'
                 isActive={contentType === 'films'}
                 onClick={() => handleClick('films')}>
-                Films
+                films
                 {contentType === 'films' && (
                     <div>
-                        <h1>Films</h1>
+                        <h1>films</h1>
                         <ul>
-                            {Object.entries(api.films).map((key, value) => (
-                                <li key={key}>{value}</li>
+                            {api.films.results.map((film, index) => (
+                                <li key={index}>{film.title}</li>
                             ))}
                         </ul>
                     </div>
                 )}
-
             </Button>
+
             <Button
                 className='button'
                 isActive={contentType === 'people'}
                 onClick={() => handleClick('people')}>
-                People
-            </Button>
-            <Button className='button'
-                isActive={contentType === 'planets'}
-                onClick={() => handleClick('planets')}>
-                Planets
-            </Button>
-            <Button className='button'
-                isActive={contentType === 'species'}
-                onClick={() => handleClick('species')}>
-                Species
-            </Button>
-            <Button className='button'
-                isActive={contentType === 'starships'}
-                onClick={() => handleClick('starships')}>
-                Starships
-            </Button>
-            <Button className='button'
-                isActive={contentType === 'vehicles'}
-                onClick={() => handleClick('vehicles')}>
-                Vehicles
+                people
+                {contentType === 'people' && (
+                    <div>
+                        <h1>people</h1>
+                        <ul>
+                            {api.people.results.map((person, index) => (
+                                <li key={index}>{person.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </Button>
         </section>
-    )
-}
+    );
+};
+
+
+//             <Button className='button'
+//                 isActive={contentType === 'planets'}
+//                 onClick={() => handleClick('planets')}>
+//                 Planets
+//             </Button>
+//             <Button className='button'
+//                 isActive={contentType === 'species'}
+//                 onClick={() => handleClick('species')}>
+//                 Species
+//             </Button>
+//             <Button className='button'
+//                 isActive={contentType === 'starships'}
+//                 onClick={() => handleClick('starships')}>
+//                 Starships
+//             </Button>
+//             <Button className='button'
+//                 isActive={contentType === 'vehicles'}
+//                 onClick={() => handleClick('vehicles')}>
+//                 Vehicles
+//             </Button>
+//         </section>
+//     )
+// }
 
 export default SectionAttributes
