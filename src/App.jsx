@@ -1,13 +1,13 @@
 
 import Header from "./components/Header/Header"
-import SectionAttributes from "./components/SectionAttributes/SectionAttributes";
+import CategorySection from "./components/CategorySection/CategorySection";
 import TabsSection from "./components/TabsSection/TabsSection";
 import FeedbackSection from './components/FeedbackSection/FeedbackSection'
 import { useState } from "react";
 import EffectSection from "./components/EffectSection/EffectSection";
 
 function App() {
-  const [tab, setTab] = useState('Effect')
+  const [tab, setTab] = useState('Home')
 
   return (
     <>
@@ -17,7 +17,7 @@ function App() {
 
         {tab === 'Home' && (
           <>
-            <SectionAttributes />
+            <CategorySection />
           </>
         )}
 
