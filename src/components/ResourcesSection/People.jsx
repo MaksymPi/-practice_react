@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react'
 
 const PeopleSection = ({ url }) => {
     const [people, setPeople] = useState([]);
+    const [loading, setLoading] = useState(false)
 
     const fetchData = async () => {
+        setLoading(true)
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -14,6 +16,7 @@ const PeopleSection = ({ url }) => {
         } catch (error) {
             console.error('Помилка при отриманні даних про людей:', error);
         }
+        setLoading(false)
     };
 
     useEffect(() => {
@@ -22,16 +25,16 @@ const PeopleSection = ({ url }) => {
 
 
     return (
-        <div>
-
+        <>
+            {loading && <p>Loading...</p>}
             <h1>people</h1>
             <ul>
                 {people.map((person, index) => (
-                    <li key={index}>{person.name }</li>
+                    <li key={index}>{person.name}</li>
                 ))}
             </ul>
 
-        </div>
+        </>
     )
 }
 

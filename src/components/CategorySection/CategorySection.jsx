@@ -44,15 +44,20 @@ const SectionAttributes = () => {
 
     return (
         <section className="section-attributes">
-            <Button
+            <section>           
+                 <Button
                 className='button'
                 isActive={contentType === 'films'}
                 onClick={() => handleClick('films')}>
                 films 
-                {contentType === 'films' && (
-                    <Films url={urls.films} />
-                )}
+                
             </Button>
+            {contentType === 'films' && (
+                    <Films url={urls.films} />
+                    )}
+            
+            </section>
+
             <Button
                 className='button'
                 isActive={contentType === 'people'}
