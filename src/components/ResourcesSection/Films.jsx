@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Modal from '../Modal/Modal';
 
 const PeopleSection = ({ url }) => {
     const [films, setFilms] = useState([]);
@@ -26,9 +25,9 @@ const PeopleSection = ({ url }) => {
 
     
     return (
-        <div>
+        <div className='category films'>
             {loading && <p>Loading...</p>}
-            <h2>people</h2>
+            <h2>Films</h2>
             <ul>
                 {films.map((results, index) => (
                     <li key={index}>{results.title }</li>

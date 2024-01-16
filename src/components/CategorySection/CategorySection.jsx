@@ -6,7 +6,15 @@ import Planets from '../ResourcesSection/Planets';
 import Species from '../ResourcesSection/Species';
 import Starships from '../ResourcesSection/Starships';
 import Vehicles from '../ResourcesSection/Vehicles';
+import styled from 'styled-components';
+
+import '../ResourcesSection/ResourcesSection.css'
 import './CategorySection.css'
+
+const StyledButton = styled.button`
+    margin: 5px;
+    padding: 10px;
+`;
 
 const apiBaseUrl = 'https://swapi.dev/api/';
 
@@ -44,14 +52,14 @@ const SectionAttributes = () => {
 
     return (
         <section className="section-attributes">
-            <section>           
-                 <Button
-                className='button'
+            <section className='category-section films'>           
+                 <StyledButton
+                className='button-category-section'
                 isActive={contentType === 'films'}
                 onClick={() => handleClick('films')}>
-                films 
+                Films 
                 
-            </Button>
+            </StyledButton>
             {contentType === 'films' && (
                     <Films url={urls.films} />
                     )}
