@@ -25,16 +25,15 @@ const PeopleSection = ({ url }) => {
 
 
     return (
-        <>
+        <div className='category people'>
             {loading && <p>Loading...</p>}
-            <h1>people</h1>
             <ul>
                 {people.map((person, index) => (
                     <li key={index}>{person.name}</li>
                 ))}
             </ul>
 
-        </>
+        </div>
     )
 }
 

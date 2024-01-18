@@ -27,7 +27,6 @@ const PeopleSection = ({ url }) => {
     return (
         <div className='category films'>
             {loading && <p>Loading...</p>}
-            <h2>Films</h2>
             <ul>
                 {films.map((results, index) => (
                     <li key={index}>{results.title }</li>

@@ -14,7 +14,7 @@ const PeopleSection = ({ url }) => {
 
             setPlanets(data.results);
         } catch (error) {
-            console.error( error);
+            console.error(error);
         }
         setLoading(false)
     };
@@ -25,16 +25,15 @@ const PeopleSection = ({ url }) => {
 
 
     return (
-        <>
-{loading && <p>Loading...</p>}
-            <h1>species</h1>
+        <div className='category planets'>
+            {loading && <p>Loading...</p>}
             <ul>
                 {planets.map((person, index) => (
                     <li key={index}>{person.name}</li>
                 ))}
             </ul>
 
-        </>
+        </div>
     )
 }
 
