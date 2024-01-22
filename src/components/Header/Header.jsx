@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { styled } from 'styled-components'
+import TabsSection from '../TabsSection/TabsSection'
 
 const HeaderContainer = styled.header`
   height: 100px;
@@ -23,8 +24,6 @@ const Header = () => {
       clearInterval(interval)
     }
   },[])
-
-
 
   return (
     <HeaderContainer>
