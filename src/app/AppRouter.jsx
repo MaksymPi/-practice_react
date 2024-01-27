@@ -1,28 +1,32 @@
-import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import Header from '../components/Header/Header';
-import TabsSection from '../components/TabsSection/TabsSection';
 import { ROUTES } from '../constants/Routes';
 
+
+// import Header from '../components/Header/Header';
+// import TabsSection from '../components/TabsSection/TabsSection';
+import CategorySection from '../components/CategorySection/CategorySection'
+import FeedbackSection from '../components/FeedbackSection/FeedbackSection';
+import NamesOfHeroes from '../components/NamesOfHeroes/NamesOfHeroes';
+import AppLayout from './AppLayout/AppLayout';
+
+
 const AppRouter = () => {
-  const headerAndTabs = (
-    <>
-      <Header />
-      <TabsSection />
-    </>
-  );
 
   const routes = useRoutes([
     {
-      path: ROUTES.main,
-      element: headerAndTabs,
+      path: ROUTES.undefined,
+      element: <div>Page not found</div>,
     },
     {
-      path: ROUTES.home,
+      path: ROUTES.main,
+      element: <AppLayout/>,
+    },
+    {
+      path: ROUTES.category,
       element: (
         <>
-          {headerAndTabs}
-          home
+          <AppLayout/>
+          <CategorySection/>
         </>
       ),
     },
@@ -30,17 +34,17 @@ const AppRouter = () => {
         path: ROUTES.feedback,
         element: (
           <>
-            {headerAndTabs}
-            feedback
+          <AppLayout/>
+            <FeedbackSection />
           </>
         ),
       },
       {
-        path: ROUTES.effect,
+        path: ROUTES.names,
         element: (
           <>
-            {headerAndTabs}
-            effect
+          <AppLayout/>
+            <NamesOfHeroes />
           </>
         ),
       },

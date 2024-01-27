@@ -9,7 +9,7 @@ import Modal from '../Modal/Modal'
 import useInput from '../../hooks/useInput'
 import CharacterProperties from '../CharacterProperties/CharacterProperties';
 
-import './EffectSection.css'
+import './NamesOfHeroes.css'
 
 
 const EffectSection = () => {
@@ -35,7 +35,7 @@ const EffectSection = () => {
 
   return (
     <section>
-      <h3>Effects</h3>
+      <h3>Names of heroes</h3>
       <Modal open={modal} character={selectedCharacter} onClose={() => setModal(false)}>
         <h3>
           {selectedCharacter?.name}

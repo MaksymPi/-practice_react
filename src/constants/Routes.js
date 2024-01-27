@@ -1,6 +1,7 @@
 export const ROUTES = {
+    undefined: '*',
     main: '/',
-    home:'/home',
+    category:'/category',
     feedback: '/feedback',
-    effect: '/effect'
+    names: '/names'
 }

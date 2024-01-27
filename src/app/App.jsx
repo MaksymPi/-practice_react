@@ -6,8 +6,10 @@ import CategorySection from "../components/CategorySection/CategorySection";
 import TabsSection from "../components/TabsSection/TabsSection";
 import FeedbackSection from '../components/FeedbackSection/FeedbackSection'
 import { useState } from "react";
-import EffectSection from "../components/EffectSection/EffectSection";
+import EffectSection from "../components/NamesOfHeroes/NamesOfHeroes";
 import AppRouter from "./AppRouter";
+
+import './App.css'
 
 // function App() {
 //   const [tab, setTab] = useState('Home')

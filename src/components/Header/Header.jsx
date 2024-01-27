@@ -1,18 +1,9 @@
-import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { styled } from 'styled-components'
-import TabsSection from '../TabsSection/TabsSection'
 
-const HeaderContainer = styled.header`
-  height: 100px;
-  display: flex;
-  padding: 0 2rem;
-  justify-content: space-between;
-  align-items: center;
-  background: #212121;
-  margin-bottom: 50px;
-`
+
+import { HeaderContainer } from './Header.styled'
+
 
 const Header = () => {
   const [now, setNow] = useState(new Date());
