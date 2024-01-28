@@ -4,9 +4,8 @@ import TabsSection from '../../components/TabsSection/TabsSection'
 import { Wrapper } from './app-layout.styled'
 
 
-import CategorySection from '../../components/CategorySection/CategorySection'
 
-const AppLayout = () => {
+const AppLayout = ({children}) => {
     return (
         <Wrapper>
             <header>
@@ -14,7 +13,7 @@ const AppLayout = () => {
                 <TabsSection />
             </header>
             <main>
-            <CategorySection/>
+            {children}
             </main>
             <footer>
                 footer
