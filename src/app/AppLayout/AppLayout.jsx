@@ -1,24 +1,27 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
 import TabsSection from '../../components/TabsSection/TabsSection'
-import { Wrapper } from './app-layout.styled'
 
 
 
-const AppLayout = ({children}) => {
+
+import { AppLayoutStyled as Styled } from '../AppLayout/AppLayout.styled'
+
+
+const AppLayout = ({ children }) => {
     return (
-        <Wrapper>
-            <header>
+        <Styled.Wrapper>
+            <Styled.Header>
                 <Header />
+            </Styled.Header>
                 <TabsSection />
-            </header>
             <main>
-            {children}
+                {children}
             </main>
             <footer>
                 footer
             </footer>
-        </Wrapper>
+        </Styled.Wrapper>
     )
 }
 

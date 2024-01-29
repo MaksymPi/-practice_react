@@ -32,7 +32,6 @@ const SectionAttributes = () => {
         try {
             const response = await fetch(apiBaseUrl);
             const data = await response.json();
-            console.log(data);
 
             setUrls({
                 films: data.films,
