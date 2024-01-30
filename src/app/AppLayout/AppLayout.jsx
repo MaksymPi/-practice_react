@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import TabsSection from '../../components/TabsSection/TabsSection'
 
@@ -18,9 +19,9 @@ const AppLayout = ({ children }) => {
             <main>
                 {children}
             </main>
-            <footer>
-                footer
-            </footer>
+            <Styled.Footer>
+                <Footer/>
+            </Styled.Footer>
         </Styled.Wrapper>
     )
 }

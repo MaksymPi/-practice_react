@@ -24,4 +24,14 @@ export const AppLayoutStyled = {
         background: #212121;
 
     `,
+    Footer: styled.footer `
+        height: 80px;
+        width:100%;
+        padding: 0 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background: #1F1A00;
+
+    `,
 };
