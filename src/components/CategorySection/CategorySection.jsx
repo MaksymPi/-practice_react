@@ -8,7 +8,6 @@ import Starships from '../ResourcesSection/Starships';
 import Vehicles from '../ResourcesSection/Vehicles';
 import styled from 'styled-components';
 
-import '../ResourcesSection/ResourcesSection.css'
 import './CategorySection.css'
 
 const StyledButton = styled.button`

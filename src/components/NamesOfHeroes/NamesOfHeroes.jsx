@@ -9,7 +9,7 @@ import Modal from '../Modal/Modal'
 import useInput from '../../hooks/useInput'
 import CharacterProperties from '../CharacterProperties/CharacterProperties';
 
-import './NamesOfHeroes.css'
+import { NamesOfHeroesStyled as Styled } from '../NamesOfHeroes/NamesOfHeroes.styled'
 
 
 const EffectSection = () => {
@@ -49,15 +49,15 @@ const EffectSection = () => {
       {!loading && (
         <>
           <input type="text" className='control' {...input} />
-          <ul>
+          <Styled.Ul>
             {peoples
               .filter(people => people.name.toLowerCase().includes(input.value.toLowerCase()))
               .map(people => (
-                <li onClick={() => { setSelectedCharacter(people); setModal(true) }} key={uniqid()}>
+                <Styled.Li onClick={() => { setSelectedCharacter(people); setModal(true) }} key={uniqid()}>
                   {people.name}
-                </li>
+                </Styled.Li>
               ))}
-          </ul>
+          </Styled.Ul>
         </>
       )}
 

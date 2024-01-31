@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
+import { ResourcesSectionStyled as Styled } from '../ResourcesSection/ResourcesSection.styled'
+
 const PeopleSection = ({ url }) => {
     const [people, setPeople] = useState([]);
     const [loading, setLoading] = useState(false)
@@ -25,15 +27,15 @@ const PeopleSection = ({ url }) => {
 
 
     return (
-        <div className='category people'>
+        <Styled.Category>
             {loading && <p>Loading...</p>}
-            <ul>
+            <Styled.Ul>
                 {people.map((person, index) => (
-                    <li key={index}>{person.name}</li>
+                    <Styled.Li key={index}>{person.name}</Styled.Li>
                 ))}
-            </ul>
+            </Styled.Ul>
 
-        </div>
+        </Styled.Category>
     )
 }
 

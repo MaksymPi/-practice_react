@@ -25,7 +25,7 @@ export const AppLayoutStyled = {
 
     `,
     Footer: styled.footer `
-        height: 80px;
+        height: 100%;
         width:100%;
         padding: 0 20px;
         display:flex;

@@ -7,4 +7,10 @@ export const FooterStyled  = {
         justify-content:space-between;
         align-items:center;
     `,
+    Ul: styled.ul`
+
+    `,
+    Li: styled.li`
+        list-style-type: none;
+    `
   }
