@@ -18,8 +18,9 @@ export const TabsSectionStyled = {
 
         transition: 0.3s;
 
-        :hover {
+        &:hover {
             text-decoration: underline;
+            color: #3cd166;
         }
 `,
 }

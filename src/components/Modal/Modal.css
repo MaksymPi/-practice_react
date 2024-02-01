@@ -13,3 +13,11 @@ dialog::backdrop {
     inset: 0px;
     background: black;
 }
+
+dialog ul  {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
